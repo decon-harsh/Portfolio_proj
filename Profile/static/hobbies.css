@@ -1,0 +1,360 @@
+body {
+    margin: 0;
+  }
+  #first-watermark{
+    position: relative;
+    top:900px;
+    margin: auto;
+    left:auto;
+    height: fit-content;
+    width: fit-content;
+    right: auto;
+  }
+  #background{
+  position: relative;
+  z-index:0;
+  background:white;
+  display:block;
+  width:fit-content;
+  margin-top:0;
+  top:0;
+  opacity: 0.7;
+  top: 0;
+  color:lightgrey;
+  font-size:100px;
+  }
+
+  #content{
+      position:absolute;
+      z-index:1;
+      font-size:35px;
+      margin-top: 0;
+      margin-left: 25px;
+      top:60px;
+      width:max-content;
+  }
+
+  #wave {
+    position: absolute;
+    width: 100vw;
+    top:720px;
+  }
+
+  #topcont {
+    background: url("/static/image/toggle3.jpeg");
+    background-size: cover;
+    background-position: left;
+    position: absolute;
+    height: 1000px;
+    width: 100%;
+  }
+
+  div.titles{
+    position: absolute;
+    top:50%;
+    left:5rem;
+    color:white;
+    font-size: x-large;
+    }
+  div.content{
+    border:solid;
+    box-shadow: 5px 5px #888888;
+    position: absolute;
+    top:60%;
+    left:80px;
+    color: white;
+    background-color:salmon;
+    border-radius: 2%;
+    /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
+    font-size:35px;
+    height:fit-content;
+    width:42.105vw;
+    overflow: hidden;
+
+  }
+
+  ul.topbar
+
+  /* all the topbar*/
+    {
+    background-color: #333;
+    list-style-type: none;
+    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+  }
+
+  li.logo {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  a.left {
+    float: left;
+  }
+
+  a.right {
+    float: right;
+  }
+
+  ul.topbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  /* hover and active*/
+  a:hover {
+    background-color: black;
+  }
+
+  a:active {
+    background-color: green;
+  }
+
+
+  @media screen and (max-width:600px) {
+    li.logo {
+      float: none;
+    }
+
+    a.right {
+      float: none;
+    }
+
+    a.left {
+      float: none;
+    }
+
+    #wave {
+      display: none;
+    }
+  }
+
+
+
+  /* Animations */
+  #rectangle {
+    position: relative;
+    float: left;
+    margin: auto;
+    font-size: 18px;
+    font-family: "Lucida Console", Monaco, monospace;
+  }
+
+  #rectangle>span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: white;
+    border-left: 1px solid transparent;
+    animation: Fwrite 10s steps(14, start) infinite, Wbar 5s step-end infinite;
+    -webkit-animation: Fwrite 5s steps(14, start) infinite, Wbar 5s step-end infinite;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
+
+  #rectangle>p:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes Fwrite {
+    0% {
+      width: 100%;
+    }
+
+    100% {
+      width: 0;
+    }
+  }
+
+  @keyframes Wbar {
+    0% {
+      border-left-color: transparent;
+    }
+
+    50% {
+      border-left-color: black;
+    }
+
+    100% {
+      border-left-color: transparent;
+    }
+  }
+
+  #top {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  /*  */
+
+
+  /* responsive media screens */
+
+  @media screen and (max-width:1577px) {
+    #topcont {
+      width: 100%;
+      margin: 0;
+      background-position: right;
+      height: 600px;
+    }
+
+    div.titles{
+      top:2%;
+    }
+    div.content{
+      top:20%;
+    }
+
+    #wave {
+      top: 400px;
+      width: 100vw;
+    }
+    #first-watermark{
+    position: absolute;
+    top:550px;
+    margin: auto;
+    left:50%;
+    height: fit-content;
+    width: fit-content;
+    right: auto;
+  }
+    #background{
+    position: relative;
+    z-index:0;
+    background:white;
+    display:block;
+    width:fit-content;
+    margin-top:0;
+    top:0;
+    opacity: 0.7;
+    top: 0;
+    color:lightgrey;
+    font-size:100px;
+}
+
+  #content{
+      position:absolute;
+      z-index:1;
+      font-size:35px;
+      margin-top: 0;
+      margin-left: 25px;
+      top:170px;
+      width:max-content;
+}
+  }
+
+  /* @media screen and (max-width: 1342px) {
+    #wave {
+      top: 300px;
+    } */
+  
+
+  @media screen and (max-width: 1132px) {
+    #wave {
+      top: 500px;
+    }
+    div.content{
+      width: 50vw;
+      overflow:visible;
+    }
+  }
+
+  @media screen and (max-width: 882px) {
+    #wave {
+      top: 420px;
+    }
+    div.content{
+      width: 50vw;
+      overflow:visible;
+      z-index: +1;
+      left:12%;
+      top:400px;
+      background:salmon;
+      font-size: 25px;
+      border-radius: 3%;
+    }
+    .hobbies{
+    color:whitesmoke;
+    }
+    div.titles{
+      top: 200px;
+    }
+  }
+  @media screen and (max-width: 815px) {
+    #wave {
+      top: 500px;
+    }
+    div.content{
+      width: 70vw;
+      overflow:visible;
+      z-index: +1;
+      left:15%;
+      top:400px;
+      background:salmon;
+    }
+    .hobbies{
+    color:whitesmoke;
+    }
+    div.titles{
+      top: 200px;
+    }
+
+  }
+  @media screen and (max-width: 469px) {
+    div.titles{
+      top:265px;
+    }
+  }
+  @media screen and (max-width: 956px){
+    div.container-1{display: block;}
+    div.col-md-4{width:80%;}
+    div.row{
+        display: flexbox;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    #first-watermark{
+    position: absolute;
+    top:850px;
+    left: 25%;
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+    right: auto;
+  }
+    #background{
+    position: relative;
+    z-index:0;
+    background:white;
+    display:block;
+    width:fit-content;
+    margin-top:0;
+    top:0;
+    opacity: 0.7;
+    top: 0;
+    color:lightgrey;
+    font-size:100px;
+}
+
+  #content{
+      position:absolute;
+      z-index:1;
+      font-size:35px;
+      margin-top: 0;
+      margin-left: 25px;
+      top:170px;
+      width:max-content;
+}
+}

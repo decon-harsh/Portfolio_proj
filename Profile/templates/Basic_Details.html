@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" type="text/css" href="{{url_for('static',filename='navbar.css') }}">
+    <title>{{title}}</title>
+<style>
+body{margin: 0;
+    background-image:;}
+
+ul.topbar    /* all the topbar*/    
+{
+    background-color:#333;
+    list-style-type: none;
+    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+}
+ul.scrolled{
+    background-color:blue;
+}
+li.logo{float: left;
+    display:block;
+    color:white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;}
+a.left{float: left;}          
+a.right{float:right;}
+ul.topbar li a 
+{
+    display:block;
+    color:white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+/* hover and active*/
+a:hover {background-color:black;}
+a:active {background-color: green;}
+@media screen and (max-width:600px){
+    li.logo{float:none;}
+    a.right{float: none;}
+    a.left{float: none;}
+}
+</style>
+</head>
+<body>
+    <ul class="topbar">
+        <li class="logo"><strong><b>My Profile</b></strong></li>
+        <li><a href="/" class="left">Main</a></li>
+        <li><a href="/contact" class="left">Contact Me</a></li>
+        {%if current_user.is_authenticated%}
+        <li><a href="/logout" class="right">Logout</a></li> 
+
+        {%else%}
+        <li><a href="/login" class="right">Login</a></li>               
+        <li><a href="/register" class="right">Register</a></li>
+        {%endif%}               
+    </ul>
+    <p>
+        Basic details form
+    </p>
+</body>
+</html>

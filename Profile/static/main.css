@@ -1,0 +1,208 @@
+*
+{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    font-family: Arial;
+}
+.header
+{
+    text-align: center;
+    padding: 32px;
+}
+.rowa
+{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap:wrap;
+    padding: 0 4px;
+    display: block;
+    align-self: center;
+}
+div.polaroida
+{
+    display: block;
+    float: inline-start;
+    overflow: hidden;
+    width: 49.8%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height:300px;
+    opacity: 0.8;
+}
+.zeroa{    
+    display: block;
+    float: inline-start;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height:500px;
+    opacity: 0.8;}
+div.polaroida:hover{cursor: pointer;
+    opacity: 1.0;}
+div.containera{
+    text-align: center;
+    color: teal;
+    margin: auto;
+}
+.full-img{width:100%;}
+h2{color:white;}
+
+
+
+/* icons */
+#Capa_1,#notebook,#pin,#joystick
+{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 80px;
+    margin-top:50px;
+}
+
+.quill{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 20px;
+    margin-top:50px;
+    margin-left: 25%;
+}
+.gem{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 30px;
+    margin-top:50px;
+    margin-left:0%;
+}
+.gear{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 40px;
+    margin-top:30px;
+    margin-left:0%;
+}
+
+/* Text block in vector image */
+.containera{
+    position: relative;
+    padding: 0;
+    border:0;
+    margin: 0;;
+}
+.text-blocka
+{
+    position: relative;
+    background-color: black;
+    color: white;
+    padding-left:20px;
+    padding-right:20px;
+}
+h2#zeroa{text-align: center;}
+.hrtile
+{
+    width: 80%;
+    size: 3px;
+}
+/* Background for polaroidas */
+.zeroa{background-color:#05386B;
+width:100%}
+.one{background-color:#5CDB95;}
+.two{background-color: lightskyblue;}
+.three{background-color:orange;}
+.four{background-color:salmon;}
+
+
+/* Media Screen */
+@media screen and (max-width:1341px){
+    div.polaroida{
+        width:100%;
+        margin:auto;
+        height: 300px;}    
+    .zeroa{
+        width:100%;
+        margin:auto;
+        height: 300px;}
+    #Capa_1,#notebook{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 80px;
+    margin-top:75px;}
+    
+
+
+    .full-img{width:100%;}
+    #rectangle > span {
+    position: absolute;
+    top: 0%;
+    right: 0;
+    height: 100%;
+    background-color:#05386B;
+    border-left: 1px solid transparent;
+    animation: Fwrite 5s steps(14, start) infinite, Wbar 5s step-end infinite;
+        -webkit-animation: Fwrite 5s steps(14, start) infinite, Wbar 5s step-end infinite;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+}
+
+/* Animations */
+#rectangle {
+  position: relative;
+  text-align: center;
+  margin: auto;
+  margin-top: 10%;
+  font-size: 18px;
+  font-family: "Lucida Console", Monaco, monospace;
+  text-align: center;
+  color: white;
+}
+
+#rectangle > span {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  height: 100%;
+  background-color:#05386B;
+  border-left: 1px solid transparent;
+  animation: Fwrite 2s steps(10, start) infinite, Wbar 2s step-end infinite;
+    -webkit-animation: Fwrite 2s steps(10, start) infinite, Wbar 2s step-end infinite;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+#rectangle > p:hover {
+  animation-play-state: paused;
+}
+
+@keyframes Fwrite {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes Wbar {
+  0% {
+    border-left-color:transparent;
+  }
+  30% {
+    border-left-color: black;
+  }
+  60% {
+    border-left-color: transparent;
+  }
+}
+/* Animation ends */

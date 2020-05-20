@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="static/hobbies.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{{title}}</title>
+
+<!-- Scroll function -->
+  <script>
+    function Scrolldown() {
+      setTimeout( function(){window.scroll(0,500);},3000); 
+    }
+    
+    window.onload = Scrolldown;
+    window.scroll({
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth'
+    });
+  </script>
+</head>
+<!-- Smooth Scroll css -->
+<style>
+  html{
+    scroll-behavior: smooth;
+  }
+</style>
+
+<body>
+
+  <!-- Navbar starts -->
+  <ul class="topbar">
+    <li class="logo"><strong><b>My Profile</b></strong></li>
+    <li><a href="/" class="left">Main</a></li>
+    <li><a href="/contact" class="left">Contact Me</a></li>
+    {%if current_user.is_authenticated%}
+    <li><a href="/logout" class="right">Logout</a></li> 
+
+    {%else%}
+    <li><a href="/login" class="right">Login</a></li>               
+    <li><a href="/register" class="right">Register</a></li>
+    {%endif%}
+  </ul>
+  <!-- navbar ends -->
+  <!-- Projects.html -->
+  <div class="container1" id="topcont">
+    <div class="textclass">
+      <div class="titles">
+        <h1><u><b>Hobbies</b></u></h1>
+      </div>
+      <div class="content container1">
+        Besides the busy life of <span id="college">college</span>. I managed to have some <span
+          class="hobbies">hobbies</span> which I do in my free time. I think <span class="hobbies">hobbies</span> are
+        quite important for a person, It not only builds up your character but also relieves you from stress. And why
+        not skills?
+      </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" id="wave" viewBox="0 0 1440 320">
+      <path fill="#ffffff" fill-opacity="1"
+        d="M0,160L48,181.3C96,203,192,245,288,240C384,235,480,181,576,133.3C672,85,768,43,864,32C960,21,1056,43,1152,42.7C1248,43,1344,21,1392,10.7L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+      </path>
+    </svg>
+  </div>
+  <div id="first-watermark">
+    <div id="background">
+      <p id="bg-text">Sports</p>
+    </div>
+    <div id="content">
+      What I play
+    </div>
+  </div>
+  <style>
+    .container-1,.container-one {
+      position: relative;
+      display: flexbox;
+      flex-wrap: wrap;
+      top: 800px;
+      left: auto;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      z-index: 1;
+      margin-bottom: 5px;
+    }
+    .rowgame {
+      display: flex;
+      justify-content: space-between;
+      z-index: 1;
+      margin-bottom: 5px;
+    }
+    .row1 {
+      display: flex;
+      justify-content: center;
+      z-index: 1;
+      border: solid;
+    }
+
+    .col-md-4 {
+      margin: auto;
+      z-index: 1;
+      border: solid;
+
+    }
+
+    .inside-box1 {
+      color: grey;
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: 956px) {
+    div.col-md-4{width:fit-content}
+    div.row{
+        display: block;
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+    }
+    #img1{
+      height: 300px;
+    }
+    .container-1,.container-one{
+      background-color: salmon;
+    }
+    }
+    @media screen and (max-width: 600px) {
+      .container-1{
+        top:900px;
+      }
+      #img1{width: 98.7vw;}
+      #grad1{
+  background: rgb(250,128,114);
+background: linear-gradient(90deg, rgba(250,128,114,1) 38%, rgba(253,208,202,1) 72%);
+}
+    }
+    #first-watermark-1{
+        position: relative;
+        top:900px;
+        margin: auto;
+        left:auto;
+        height: fit-content;
+        width: fit-content;
+        right: auto;
+      }
+#background-1{
+      position: relative;
+      z-index:0;
+      background:white;
+      display:block;
+      width:fit-content;
+      margin-top:0;
+      top:0;
+      opacity: 0.7;
+      top: 0;
+      color:lightgrey;
+      font-size:100px;
+      }
+    
+#content-1{
+          position:absolute;
+          z-index:1;
+          font-size:35px;
+          margin-top: 0;
+          margin-left: 25px;
+          top:60px;
+          width:max-content;
+        }
+        .container-one{
+          border: solid  coral;
+
+        }
+#game1{
+  width:35vw;
+  max-width: 500px;
+}    
+
+    
+  </style>
+  <div class="container-1" id="grad1">
+    <div class="row">
+      <div class="col-md-4">
+        <img id="img1" src="{{url_for('static',filename='image/cricket.jpeg')}}">
+      </div>
+      <div class="col-md-4">
+        <img id="img2" src="{{url_for('static',filename='image/badminton.jpeg')}}">
+      </div>
+      <div class="col-md-4">
+        <img id="img3" src="{{url_for('static',filename='image/chess.jpeg')}}">
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div id="first-watermark-1">
+    <div id="background-1">
+      <p id="bg-text-1">Movies</p>
+    </div>
+    <div id="content-1">
+      What I watch
+    </div>
+  </div>
+  <div class="container-1" style="background-color: salmon;">
+    <div class="row">
+      <div class="col-md-4" style="width: 100%;">
+        <img id="img0" src="{{url_for('static',filename='image/shutterisland.jpeg')}}">
+        <p style="color: black;font-size: large;text-align: center;"> Andrew Laeddis or Edward Daniels?</p>
+      </div>
+      <div class="col-md-4" style="width: 100%;">
+        <img id="img2" src="{{url_for('static',filename='image/peakyfookinblinders.jpeg')}}">
+        <p style="color: black;font-size: large; text-align: center;"> Peaky Fookin Blinders</p>
+
+      </div>
+      <div class="col-md-4" style="width: 100%;">
+        <img id="img3" src="{{url_for('static',filename='image/interstellar.jpeg')}}">
+        <p style="color: black;font-size: large;text-align: center;"> Space Voyage!</p>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <img id="img2" src="{{url_for('static',filename='image/breakingbad.jpeg')}}">
+      </div>
+      <div class="col-md-4">
+        <img id="img3" src="{{url_for('static',filename='image/drishyam1.jpeg')}}">
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div id="first-watermark-1">
+  <div id="background-1">
+    <p id="bg-text-1">Games</p>
+  </div>
+  <div id="content-1">
+    Controller Freak
+  </div>
+  </div>
+  <div class="container-one" style="background-color: salmon;">
+<div class="rowgame">
+  <div class="col-md-4 game">
+    <img id="game1" src="{{url_for('static',filename='image/pubg.jpeg')}}">
+  </div>
+  <div class="col-md-4 game">
+    <img id="game1" src="{{url_for('static',filename='image/outlast2.jpeg')}}">
+  </div>
+</div>
+<hr>
+  </div>
+</body>
+
+</html>

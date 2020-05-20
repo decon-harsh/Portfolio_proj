@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="bootstrap.min.css" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>{{title}}</title>
+</head>
+<body>
+  <style>
+    body{margin: 0;}
+    ul.topbar    /* all the topbar*/    
+    {
+        overflow: hidden;
+        top:0;
+        background-color: #333;
+        list-style-type: none;
+        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
+        overflow: hidden;
+    }
+    li.logo{float: left;
+        display:block;
+        color:white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;}
+    a.left{float: left;}          
+    a.right{float:right;}
+    ul.topbar li a 
+    {
+        display:block;
+        color:white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    /* hover and active*/
+    a:hover {background-color:black;}
+    a:active {background-color: green;}
+    @media screen and (max-width:600px){
+        li.logo{float:none;}
+        a.right{float: none;}
+        a.left{float: none;}
+    }
+  </style>
+  <!-- Navbar Starts -->
+  <ul class="topbar">
+    <li class="logo"><strong><b>My Profile</b></strong></li>
+    <li><a href="/" class="left">Main</a></li>
+    <li><a href="/contact" class="left">Contact Me</a></li>
+    {%if current_user.is_authenticated%}
+    <li><a href="/logout" class="right">Logout</a></li> 
+
+    {%else%}
+    <li><a href="/login" class="right">Login</a></li>               
+    <li><a href="/register" class="right">Register</a></li>
+    {%endif%}
+  </ul>
+  <style>
+    @media (max-width:767px) {
+      .contact-clean {
+        padding: 20px 0;
+      }
+    }
+
+    .contact-clean {
+      background: #f1f7fc;
+      padding: 80px 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      text-align: left;
+      /* background-color: #fff; */
+      background-image: url('static/image/black-8.jpg');
+    }
+
+    html {
+      font-family: sans-serif;
+      line-height: 1.15;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .contact-clean {
+  /* background: #f1f7fc; */
+  background-color: transparent;
+  padding: 80px 0;
+}
+
+@media (max-width:767px) {
+  .contact-clean {
+    padding: 20px 0;
+    margin-top: 4.0rem;
+  }
+}
+
+.contact-clean form {
+  max-width: 480px;
+  width: 90%;
+  margin: 2.5rem auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 4px;
+  color: #505e6c;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+}
+
+@media (max-width:767px) {
+  .contact-clean form {
+    padding: 30px;
+  }
+}
+
+.contact-clean h2 {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 36px;
+  color: inherit;
+}
+
+.contact-clean .form-group:last-child {
+  margin-bottom: 5px;
+}
+
+.contact-clean form .form-control {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+  outline: none;
+  color: inherit;
+  padding-left: 12px;
+  height: 42px;
+}
+
+.contact-clean form .form-control:focus {
+  border: 1px solid #b2b2b2;
+}
+
+.contact-clean form textarea.form-control {
+  min-height: 100px;
+  max-height: 260px;
+  padding-top: 10px;
+  resize: vertical;
+  font-size: 13.5px;
+}
+
+.contact-clean form .btn {
+  padding: 16px 32px;
+  border: none;
+  background: none;
+  box-shadow: none;
+  text-shadow: none;
+  opacity: 0.8;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  line-height: 1;
+  outline: none !important;
+}
+
+.contact-clean form .btn:hover {
+  opacity: 1;
+}
+
+.contact-clean form .btn:active {
+  transform: translateY(1px);
+}
+
+.contact-clean form .btn-primary {
+  background-color: #055ada !important;
+  margin-top: 15px;
+  color: #fff;
+}
+
+::placeholder {
+  font-size: small;
+}
+
+
+
+  </style>
+  <div class="contact-clean">
+    <form method="POST">
+        <h2 class="text-center">Contact me</h2>
+        <div class="form-group">
+            {%if form.Name.errors%}
+                {{form.Name(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                    {%for error in form.Name.errors%}
+                        <span>{{error}}</span>
+                    {%endfor%}    
+                </div>
+            {%else%}
+                {{ form.Name(class="form-control form-control-lg" ,placeholder="Name")  }}
+            {%endif%}    
+        </div>
+        <div class="form-group">
+            {%if form.Phone_No.errors%}
+                {{form.Phone_No(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                    {%for error in form.Phone_No.errors%}
+                        <span>{{error}}</span>
+                    {%endfor%}    
+                </div>
+            {%else%}
+                {{ form.Phone_No(class="form-control form-control-lg" ,placeholder="Phone Number")  }}
+            {%endif%}    
+        </div>
+        <div class="form-group">
+          {%if form.email.errors%}
+              {{form.email(class="form-control form-control-lg is-invalid")}}
+              <div class="invalid-feedback">
+                  {%for error in form.email.errors%}
+                      <span>{{error}}</span>
+                  {%endfor%}    
+              </div>
+          {%else%}
+              {{ form.email(class="form-control form-control-lg", placeholder="Email") }}
+          {%endif%}    
+      </div>
+        <!-- <div class="form-group">
+            <input class="form-control is-invalid" type="email" name="email" placeholder="Email" /><small class="form-text text-danger">Please enter a correct email address.</small>
+        </div> -->
+        <div class="form-group"><textarea class="form-control" name="message" placeholder="Enter your message here. I will get back to you within 2 buisness days. " rows="14"></textarea></div>
+        <div class="form-group"><button class="btn btn-primary" type="submit">send </button></div>
+    </form>
+  </div>
+</body>
+</html>
